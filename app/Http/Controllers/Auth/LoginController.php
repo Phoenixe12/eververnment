@@ -63,8 +63,9 @@ class LoginController extends Controller
         }
         else
         {
+            
             return redirect()
-            ->route("login")
+            ->route("auths")
             ->with("error",'Incorrect email or password');
         }
     }

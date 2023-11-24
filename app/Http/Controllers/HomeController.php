@@ -2,7 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Organisateur;
+use App\Models\User;
+use App\Models\Candidature;
+use App\Models\Emails_newsletter;
+
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
@@ -24,16 +27,22 @@ class HomeController extends Controller
      */
     public function userHome()
     {
-        return view('home',["msg"=>"I am user role"]);
+        return view('');
     }
 
     public function editorHome()
     {
-        return view('home',["msg"=>"I am Editor role"]);
+        $total = Candidature::count();
+        $qualifie = Candidature::where('status','QUALIFIE')->count();
+        $rejete = Candidature::where('status','REJETE')->count();
+        $nq = Candidature::whereNull('status')->count();
+        $admin = User::where('role','1')->count();
+        $email = Emails_newsletter::count();
+        return view('Admin.index',compact('qualifie','rejete','nq','admin','total','email'));
     }
 
     public function adminHome()
     {
-        return view('Admin.index');
+        return view('home',["msg"=>"I am user role"]);
     }
 }

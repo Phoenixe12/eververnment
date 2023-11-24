@@ -5,13 +5,16 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="csrf-token" content="{{ csrf_token() }}">
-    <title>Gestionnaire d'Evénement</title>
+    <title>Admin page</title>
+    <link href="{{ asset('assets/dist/img/logo_01.png') }}" rel="icon">
+    <link href="{{ asset('assets/dist/img/logo_01.png') }}" rel="apple-touch-icon">
     <!-- Google Font: Source Sans Pro -->
     <link rel="stylesheet"
         href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
     <!-- Font Awesome -->
     <link rel="stylesheet" href="{{ asset('assets/plugins/fontawesome-free/css/all.min.css') }}">
     <!-- Ionicons -->
+     <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
     <link rel="stylesheet" href="{{ asset('assets/dist/css/code.ionicframework.min.css') }}">
     <!-- Tempusdominus Bootstrap 4 -->
     <link rel="stylesheet"
@@ -73,8 +76,11 @@
 
         <!-- Preloader -->
         <div class="preloader flex-column justify-content-center align-items-center ">
-            <img class="animation__shake" src="{{ asset('assets/dist/img/AdminLTELogo.png') }}" alt="AdminLTELogo"
-                height="60" width="60">
+              <!-- Preloader -->
+        <div class="preloader flex-column justify-content-center align-items-center">
+            <img class="animation__shake" src="{{ asset('assets/dist/img/logo_01.png') }}" alt="Greatime"
+                height="192" width="700">
+        </div>
         </div>
 
         <!-- Navbar -->
@@ -86,10 +92,7 @@
                             class="fas fa-bars"></i></a>
                 </li>
                 <li class="nav-item d-none d-sm-inline-block">
-                    <a href="" class="nav-link">Home</a>
-                </li>
-                <li class="nav-item d-none d-sm-inline-block">
-                    <a href="#" class="nav-link">Contact</a>
+                    <a href="{{ route('home.editor') }}" class="nav-link">Home</a>
                 </li>
             </ul>
 
@@ -103,90 +106,8 @@
                         <i class="far fa-comments"></i>
                         <span class="badge badge-danger navbar-badge">3</span>
                     </a>
-                    <div class="dropdown-menu dropdown-menu-lg dropdown-menu-right">
-                        <a href="#" class="dropdown-item">
-                            <!-- Message Start -->
-                            <div class="media">
-                                <img src="<{{ asset('assets/dist/img/user1-128x128.jpg') }}" alt="User Avatar"
-                                    class="img-size-50 mr-3 img-circle">
-                                <div class="media-body">
-                                    <h3 class="dropdown-item-title">
-                                        Brad Diesel
-                                        <span class="float-right text-sm text-danger"><i class="fas fa-star"></i></span>
-                                    </h3>
-                                    <p class="text-sm">Call me whenever you can...</p>
-                                    <p class="text-sm text-muted"><i class="far fa-clock mr-1"></i> 4 Hours Ago</p>
-                                </div>
-                            </div>
-                            <!-- Message End -->
-                        </a>
-                        <div class="dropdown-divider"></div>
-                        <a href="#" class="dropdown-item">
-                            <!-- Message Start -->
-                            <div class="media">
-                                <img src="<{{ asset('assets/dist/img/user8-128x128.jpg') }}" alt="User Avatar"
-                                    class="img-size-50 img-circle mr-3">
-                                <div class="media-body">
-                                    <h3 class="dropdown-item-title">
-                                        John Pierce
-                                        <span class="float-right text-sm text-muted"><i
-                                                class="fas fa-star"></i></span>
-                                    </h3>
-                                    <p class="text-sm">I got your message bro</p>
-                                    <p class="text-sm text-muted"><i class="far fa-clock mr-1"></i> 4 Hours Ago</p>
-                                </div>
-                            </div>
-                            <!-- Message End -->
-                        </a>
-                        <div class="dropdown-divider"></div>
-                        <a href="#" class="dropdown-item">
-                            <!-- Message Start -->
-                            <div class="media">
-                                <img src="{{ asset('assets/dist/img/user3-128x128.jpg') }}" alt="User Avatar"
-                                    class="img-size-50 img-circle mr-3">
-                                <div class="media-body">
-                                    <h3 class="dropdown-item-title">
-                                        Nora Silvester
-                                        <span class="float-right text-sm text-warning"><i
-                                                class="fas fa-star"></i></span>
-                                    </h3>
-                                    <p class="text-sm">The subject goes here</p>
-                                    <p class="text-sm text-muted"><i class="far fa-clock mr-1"></i> 4 Hours Ago</p>
-                                </div>
-                            </div>
-                            <!-- Message End -->
-                        </a>
-                        <div class="dropdown-divider"></div>
-                        <a href="#" class="dropdown-item dropdown-footer">See All Messages</a>
-                    </div>
                 </li>
-                <!-- Notifications Dropdown Menu -->
-                <li class="nav-item dropdown">
-                    <a class="nav-link" data-toggle="dropdown" href="#">
-                        <i class="far fa-bell"></i>
-                        <span class="badge badge-warning navbar-badge">15</span>
-                    </a>
-                    <div class="dropdown-menu dropdown-menu-lg dropdown-menu-right">
-                        <span class="dropdown-item dropdown-header">15 Notifications</span>
-                        <div class="dropdown-divider"></div>
-                        <a href="#" class="dropdown-item">
-                            <i class="fas fa-envelope mr-2"></i> 4 new messages
-                            <span class="float-right text-muted text-sm">3 mins</span>
-                        </a>
-                        <div class="dropdown-divider"></div>
-                        <a href="#" class="dropdown-item">
-                            <i class="fas fa-users mr-2"></i> 8 friend requests
-                            <span class="float-right text-muted text-sm">12 hours</span>
-                        </a>
-                        <div class="dropdown-divider"></div>
-                        <a href="#" class="dropdown-item">
-                            <i class="fas fa-file mr-2"></i> 3 new reports
-                            <span class="float-right text-muted text-sm">2 days</span>
-                        </a>
-                        <div class="dropdown-divider"></div>
-                        <a href="#" class="dropdown-item dropdown-footer">See All Notifications</a>
-                    </div>
-                </li>
+
                 <!--  -->
                 <li class="nav-item dropdown">
                     <a class="nav-link" data-toggle="dropdown" href="#">
@@ -235,20 +156,21 @@
         <!-- /.navbar -->
 
         <!-- Main Sidebar Container -->
-        <aside class="main-sidebar sidebar-dark-primary elevation-4" style="background-color:#0b3544;">
+        <aside class="main-sidebar sidebar-dark-primary elevation-4" style="background-color:#0b440e;">
             <!-- Brand Logo -->
-            <a href="#" class="brand-link">
-                <img src="{{ asset('assets/dist/img/png-transparent-meeting-computer-icons-convention-conference-centre-business-reunion-text-public-relations-logo.png') }}"
-                    alt="AdminLTE Logo" class="brand-image img-circle elevation-3" style="opacity: .8">
-                <span class="brand-text font-weight-light">ADMIN</span>
+            <a href="#" class="brand-link text-center"
+                style="padding-top: 3px; padding-bottom: 2px;background-color:#FFF;height: 60px;">
+                <img style="max-width: 200px;max-height: 54px;" src="{{ asset('assets/dist/img/logo_01.png') }}  " width="100%"
+                    alt="">
+                <!--span class="brand-text font-weight-light">AdminLTE 3</span-->
             </a>
             <!-- Sidebar -->
-            <div class="sidebar" style="background-color:#0b3544;">
+            <div class="sidebar" style="background-color:#0b440e;">
                 <!-- Sidebar user panel (optional) -->
                 <div class="user-panel mt-3 pb-3 mb-3 d-flex">
 
                     <div class="info">
-                        <a href="#" class="d-block fw-bold">Alexander Pierce</a>
+                        <a href="#" class="d-block">{{ Auth::user()->name }}</a>
                     </div>
                 </div>
                 <!-- Sidebar Menu -->
@@ -267,9 +189,9 @@
                             </a>
                             <ul class="nav nav-treeview">
                                 <li class="nav-item">
-                                    <a href="{{ route('home.admin') }}" class="nav-link">
+                                    <a href="{{ route('home.editor') }}" class="nav-link">
                                         <i class="far fa-circle nav-icon"></i>
-                                        <p>Dashboard </p>
+                                        <p>Statistiques</p>
                                     </a>
                                 </li>
 
@@ -284,56 +206,41 @@
                                 </p>
                             </a>
                             <ul class="nav nav-treeview">
-                                <li class="nav-item">
-                                    <a href="{{ route('organisateur.index') }}" class="nav-link">
-                                        <i class="far fa-circle nav-icon"></i>
-                                        <p>Organisateurs</p>
-                                    </a>
-                                </li>
-                                <li class="nav-item">
-                                    <a href="{{ route('Evenement.index') }}" class="nav-link">
-                                        <i class="far fa-circle nav-icon"></i>
-                                        <p>Evénements</p>
-                                    </a>
-                                </li>
-                                <li class="nav-item">
-                                    <a href="{{ route('programme.index') }}" class="nav-link">
-                                        <i class="far fa-circle nav-icon"></i>
-                                        <p>Programmes</p>
-                                    </a>
-                                </li>
-
 
                                 <li class="nav-item">
-                                    <a href="{{ route('Hotesse.index') }}" class="nav-link">
+                                    <a href="{{ route('Candidature.index') }}" class="nav-link">
                                         <i class="far fa-circle nav-icon"></i>
-                                        <p>Hotesses</p>
-                                    </a>
-                                </li>
-
-                                <li class="nav-item">
-                                    <a href="{{ route('Tables.index') }}" class="nav-link">
-                                        <i class="far fa-circle nav-icon"></i>
-                                        <p>Tables Invités</p>
+                                        <p>Candidatures</p>
                                     </a>
                                 </li>
                                 <li class="nav-item">
-                                    <a href="{{ route('Invite.index') }}" class="nav-link">
+                                    <a href="{{ route('Activite.index') }}" class="nav-link">
                                         <i class="far fa-circle nav-icon"></i>
-                                        <p>Invités</p>
+                                        <p>Domaines d'activités</p>
                                     </a>
                                 </li>
                                 <li class="nav-item">
-                                    <a href="{{ route('Table_Hotesse.index') }}" class="nav-link">
+                                    <a href="{{ route('Etude.index') }}" class="nav-link">
                                         <i class="far fa-circle nav-icon"></i>
-                                        <p>Table d'hôtesse</p>
+                                        <p>Domaines d'études</p>
                                     </a>
                                 </li>
-
                                 <li class="nav-item">
-                                    <a href="{{ route('Information.index') }}" class="nav-link">
+                                    <a href="{{ route('Diplome.index') }}" class="nav-link">
                                         <i class="far fa-circle nav-icon"></i>
-                                        <p>Autres Informations</p>
+                                        <p>Diplômes</p>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="{{ route('Pays.index') }}" class="nav-link">
+                                        <i class="far fa-circle nav-icon"></i>
+                                        <p>Pays</p>
+                                    </a>
+                                </li>
+                                  <li class="nav-item">
+                                    <a href="{{ route('Newsletter.index') }}" class="nav-link">
+                                       <i class="far fa-circle nav-icon"></i>
+                                        <p>Newsletter</p>
                                     </a>
                                 </li>
                             </ul>
@@ -355,7 +262,7 @@
                                         <p>Utilisateurs</p>
                                     </a>
                                 </li>
-
+                                  
                             </ul>
                         </li>
                         <!--Fin de   -->
@@ -407,14 +314,14 @@
                     <!-- Main row -->
 
                     @yield('Dashboard')
-                    @yield('Organisateur')
-                    @yield('Programme')
-                    @yield('Tables')
-                    @yield('Hotesse')
-                    @yield('Evenement')
-                    @yield('Invite')
-                    @yield('Information')
-                    @yield('Table_Hotesse')
+                    @yield('user')
+                    @yield('Candidature')
+                    @yield('Activite')
+                    @yield('Etude')
+                    @yield('Diplome')
+                    @yield('Pays')
+                     @yield('Newsletter')
+
                 </div><!-- /.container-fluid -->
 
             </section>
@@ -422,7 +329,7 @@
         </div>
         <!-- /.content-wrapper -->
         <footer class="main-footer">
-            <strong>Copyright &copy; 2023-2024 <a href="#">######</a>.</strong>
+            <strong>Copyright &copy; 2023-2024 <a href="#">EXPERTIK LABS</a>.</strong>
             All rights reserved.
 
         </footer>

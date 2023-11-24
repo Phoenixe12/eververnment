@@ -1,10 +1,10 @@
 <div class="modal fade" id="modalFormOrganisteur">
-    <div class="modal-dialog modal-lg modal-dialog-centered">
+    <div class="modal-dialog  modal-dialog-centered">
         <div class="modal-content ">
             <form id="formOrg" action="{{ route('user.store') }}" data-toggle="validator" role="form"
                 method="POST" enctype="multipart/form-data">
                 @csrf
-                <div class="modal-header py-1" style="background-color:#0b3544;">
+                <div class="modal-header py-1" style="background-color:#0b440e;">
                     <h4 class="modal-title text-white">Utilisateur</h4>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span></button>
@@ -16,7 +16,7 @@
 
                             <div class="col-md-6">
                                 <input id="name" type="text" class="form-control @error('name') is-invalid @enderror" name="name" value="{{ old('name') }}" required autocomplete="name" autofocus>
-                                <input type="hidden"  value="2" name="role" required />
+                                <input type="hidden"  value="1" name="role" required />
                                 @error('name')
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>

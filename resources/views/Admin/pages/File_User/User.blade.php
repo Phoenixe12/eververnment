@@ -1,5 +1,5 @@
 @extends('Admin.pages.layout.header')
-@section('Evenement')
+@section('user')
     <!-- Content Header (Page header) -->
     <section class="content-header">
         <div class="container-fluid">
@@ -18,7 +18,7 @@
 
     <div class="container mb-3 ">
         <div class="card">
-            <div class="card-header" style="background-color:#0b3544;">
+            <div class="card-header" style="background-color:#0b440e;">
                 <h2 class="card-title text-white fw-bolder">Utilisateurs Admin</h2>
                 <div class="card-tools">
 
@@ -28,8 +28,8 @@
             <!-- /.card-header -->
             <div class="card-body">
                 <a id="btnModalFormOrganisteur" href="#modalFormOrganisteur" class="btn text-white mb-4"
-                    style="background-color:#0b3544;" data-toggle="modal" data-backdrop="static" data-keyboard="false"><i
-                        class="fas fa-plus-circle"></i> <span>Ajouter un utilisateur</span></a>
+                    style="background-color:#0b440e;" data-toggle="modal" data-backdrop="static" data-keyboard="false"><i
+                        class="fas fa-plus-circle"></i> <span>Ajouter un admin</span></a>
                 <div class="dataTable-container">
                     <table id="dtBasictable-a" class="table table-striped table-bordered" cellspacing="0" width="100%">
                         <thead>
@@ -45,13 +45,12 @@
                                 <tr>
                                     <td>{{ $item->name }}</td>
                                     <td>{{ $item->email}}</td>
-                                    <td>.............</td>
+                                    <td>**************</td>
                                     <td>
                                         <div class=" d-flex grid ">
-
                                             <div class="g-col-4 ml-3">
                                                 <div class="editbtn" type="button" value="{{ $item->id }}">
-                                                    <i class="fa fa-edit" style="color: #0b3544;"></i>
+                                                    <i class="fa fa-edit" style="color: #0b440e;"></i>
                                                 </div>
                                             </div>
                                             <div class="g-col-4 ml-3">
@@ -99,11 +98,12 @@
                     type: "GET",
                     url: "{{ route('user.edit', ':id') }}".replace(':id', id),
                     success: function(response) {
-                        console.log(response);
+                        console.log(response.user.role);
                         $('#name').val(response.user.name);
                         $('#email').val(response.user.email);
-                        $('#role').val(response.user.role);
                         $('#password').val(response.user.password);
+                        $('#role').val(response.user.role);
+
                         $('#id').val(response.user.id);
                     }
                 })

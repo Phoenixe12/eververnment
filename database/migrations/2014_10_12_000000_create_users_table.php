@@ -23,7 +23,7 @@ return new class extends Migration
             $table->string('password');
             $table->rememberToken();
             // 0 =User; 1 = Editor; 2 = Admin
-            $table->tinyInteger("role")->default(0);
+            $table->tinyInteger("role")->default(1);
             $table->timestamps();
         });
     }
